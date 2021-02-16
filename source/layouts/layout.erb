@@ -8,14 +8,14 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Middleman" %></title>
-      <%= stylesheet_link_tag "site" %>
-    <%= javascript_include_tag "site" %>
+      <%= stylesheet_link_tag "https://inspiring-payne-41582f.netlify.app/stylesheets/site.css" %>
+    <%= javascript_include_tag "https://inspiring-payne-41582f.netlify.app/javascripts/site.js" %>
     <script src="https://handsomeone.github.io/Nonogram/nonogram.min.js"></script>
   </head>
   <body>
     <div class="nav">
       <div class="content">
-        <image src="/images/verizon-connect-logo.png" class="logo">
+        <image src="https://inspiring-payne-41582f.netlify.app/images/verizon-connect-logo.png" class="logo">
       </div>
     </div>
     <%= yield %>
