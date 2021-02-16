@@ -3,12 +3,42 @@ title: nonogram
 ---
 
 
+<div class="content">
 <h1>
-  Nonogram
+  Solve the nonogram below
 </h1>
-<image src="/images/nonogram.png">
-<%= link_to(
-  "Read Documentation",
-  "https://middlemanapp.com/basics/templating_language/",
-  target: "_blank"
-) %>
+
+<canvas id="play1" width="1000"></canvas>
+
+<script>
+new nonogram.Game(
+  [[1,1,4,2], [1,1,1,1,1],[2,2,1,1],[1,1,1,1],[3,1,1,1],[1,4,2]],
+  [[3], [3], [2], [3],[3],[],[1,2],[1,1,1],[1,1,1],[2,1],[],[4],[1,1],[1,1],[1,1]],
+  'play1',
+  { theme: {
+    filledColor: '#0c6',
+    correctColor: '#0c6', boldMeshGap: 0},
+    onSuccess(){foobar()}
+  })
+  document.getElementById('answer').value = "&#8634;"
+function myFunction(){
+  var url = "https://go.verizonconnect.com/nz/"+document.getElementById("answer").value+"/"
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+               alert('valid url');
+               document.getElementById('button').innerHTML = "&#2713;"
+            }
+            else {
+                document.getElementById('button').innerHTML = "&#8634;"
+            }
+      };
+      xhttp.open("HEAD", url, true);
+      xhttp.send();
+}
+    </script>
+
+    <p>Solved it already? <strong>go.verizonconnect.com/nz/</strong><input type="text" placeholder="your-answer" id="answer"><button onclick="myFunction()" id="button" type="button">&raquo;</button>
+
+</div>
