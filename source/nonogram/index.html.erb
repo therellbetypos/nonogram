@@ -7,17 +7,16 @@ title: nonogram
     Solve the nonogram below
   </h1>
 
-  <canvas id="play1" width="1000"></canvas>
+  <canvas id="play" width="1000"></canvas>
 
   <script>
     new nonogram.Game(
       [[1,1,4,2], [1,1,1,1,1],[2,2,1,1],[1,1,1,1],[3,1,1,1],[1,4,2]],
       [[3], [3], [2], [3],[3],[],[1,2],[1,1,1],[1,1,1],[2,1],[],[4],[1,1],[1,1],[1,1]],
-      'play1',
+      'play',
       { theme: {
-        filledColor: '#0c6',
-        correctColor: '#0c6', boldMeshGap: 0},
-        onSuccess(){foobar()}
+        filledColor: '#000',
+        correctColor: '#0c6', boldMeshGap: 0}
     })
   </script>
 
